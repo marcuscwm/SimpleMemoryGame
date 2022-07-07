@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/gameButton11"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton21"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton12"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton21"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton11"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton31"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton22"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton31"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton21"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton41"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton32"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton41"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton31"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton42"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton12"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton22"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton11"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton13"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton22"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton12"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton32"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton21"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton23"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton32"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton22"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton42"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton31"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton33"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton42"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton32"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton41"
+        app:layout_constraintRight_toLeftOf="@+id/gameButton43"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton13"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton23"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton12"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton23"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton13"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton33"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton22"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton33"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton23"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton43"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton32"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/flipped_down" />
+
+    <ImageButton
+        android:id="@+id/gameButton43"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_0_police"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton33"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/gameButton42"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/flipped_down" />
+
+    <TextView
+        android:id="@+id/textMatches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0 of 6 matches"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/textTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="00:00"
+
+        app:layout_constraintBottom_toTopOf="@+id/gameButton13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

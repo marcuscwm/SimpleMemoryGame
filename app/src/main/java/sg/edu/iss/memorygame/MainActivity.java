@@ -24,28 +24,30 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_3_place, R.drawable.ic_4_basketball, R.drawable.ic_5_star,
             R.drawable.ic_6_esports};
 
-    private Boolean lastImgIsFaceUp = false;
+    private Boolean lastImgIsFaceUp;
 
-    private Boolean clickable = true;
+    private Boolean clickable;
 
     private int lastImgId;
 
     private ImageButton lastBtn;
 
-    private int matchedSets = 0;
+    private int matchedSets;
 
     private List<ImageButton> matchedBtns;
 
-    private int seconds = 0;
+    private int seconds;
 
-    private int minutes = 0;
+    private int minutes;
 
-    private Boolean started = false;
+    private Boolean started;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        startSettings();
 
         matchedBtns = new ArrayList<ImageButton>() {
         };
@@ -68,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        started = true;
                         if (clickable && matchedSets < imgIdList.length
                                 && !matchedBtns.contains(btn)) {
                             btn.setImageResource(images.get(finalI));
@@ -103,9 +104,12 @@ public class MainActivity extends AppCompatActivity {
                                 clickable = true;
                                 matchedBtns.add(btn);
                                 matchedBtns.add(lastBtn);
+                                if (matchedSets == imgIdList.length)
+                                    started = false;
 
                                 // first flip of a pair
                             } else if (!lastImgIsFaceUp) {
+                                started = true;
                                 lastImgIsFaceUp = true;
                                 lastImgId = images.get(finalI);
                                 lastBtn = btn;
@@ -117,6 +121,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         runTimer();
+    }
+
+    private void startSettings() {
+        lastImgIsFaceUp = false;
+        clickable = true;
+        matchedSets = 0;
+        seconds = 0;
+        minutes = 0;
+        started = false;
     }
 
     private void runTimer() {
@@ -134,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                         "%02d:%02d", minutes, seconds);
                 txtTime.setText(text);
 
-                if (started && matchedSets < imgIdList.length)
+                if (started)
                     seconds++;
                 handler.postDelayed(this, 1000);
             }

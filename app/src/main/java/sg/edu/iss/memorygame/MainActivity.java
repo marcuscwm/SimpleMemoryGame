@@ -25,21 +25,13 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_6_esports};
 
     private Boolean lastImgIsFaceUp;
-
     private Boolean clickable;
-
     private int lastImgId;
-
     private ImageButton lastBtn;
-
     private int matchedSets;
-
     private List<ImageButton> matchedBtns;
-
     private int seconds;
-
     private int minutes;
-
     private Boolean started;
 
     @Override
@@ -74,16 +66,22 @@ public class MainActivity extends AppCompatActivity {
                                 && !matchedBtns.contains(btn)) {
                             btn.setImageResource(images.get(finalI));
 
-                            // if mismatch
-                            if (lastImgIsFaceUp && images.get(finalI) != lastImgId) {
-                                clickable = false;
+                            // first flip of a pair
+                            if (!lastImgIsFaceUp) {
+                                started = true;
+                                lastImgIsFaceUp = true;
+                                lastImgId = images.get(finalI);
+                                lastBtn = btn;
+                                clickable = true;
 
+                                // if mismatch
+                            } else if (images.get(finalI) != lastImgId) {
+                                clickable = false;
                                 // timer until user can click again
                                 final Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-
                                         // overturn mismatched pair
                                         btn.setImageResource(R.drawable.ic_0_police);
                                         lastBtn.setImageResource(R.drawable.ic_0_police);
@@ -93,8 +91,7 @@ public class MainActivity extends AppCompatActivity {
                                 }, 1500);
 
                                 // if matched
-                            } else if (lastImgIsFaceUp && images.get(finalI) == lastImgId
-                                    && lastBtn != btn) {
+                            } else if (images.get(finalI) == lastImgId && lastBtn != btn) {
                                 lastImgIsFaceUp = false;
                                 matchedSets++;
                                 TextView textScore = findViewById(R.id.textMatches);
@@ -106,14 +103,6 @@ public class MainActivity extends AppCompatActivity {
                                 matchedBtns.add(lastBtn);
                                 if (matchedSets == imgIdList.length)
                                     started = false;
-
-                                // first flip of a pair
-                            } else if (!lastImgIsFaceUp) {
-                                started = true;
-                                lastImgIsFaceUp = true;
-                                lastImgId = images.get(finalI);
-                                lastBtn = btn;
-                                clickable = true;
                             }
                         }
                     }
